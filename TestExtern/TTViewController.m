@@ -7,7 +7,7 @@
 //
 
 #import "TTViewController.h"
-@class  ViewController;
+
 @interface TTViewController ()
 
 @end
@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view.
 //    [ViewController shareObject];
 //    NSLog(@" _%@__vc__",externConstString);
+//     NSLog(@"extern %@ const %@ const2   static %@",externConstString,constString ,staticString);
 }
 
 - (void)didReceiveMemoryWarning

@@ -26,10 +26,12 @@ struct SSPoint {
     float y ;
     float z ;
 };
+
 typedef struct OtherPoing {
     int m ;
     int n ;
 }OtherPoint;
+
 @interface ViewController : UIViewController<UIScrollViewDelegate>
 {
     OtherPoint oPoint;

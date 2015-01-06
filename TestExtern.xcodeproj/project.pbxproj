@@ -11,6 +11,7 @@
 		3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979519D2A81400EBFE09 /* connect_view_head.png */; };
 		3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979619D2A81400EBFE09 /* connect_view_progress.png */; };
 		3992979C19D2B56700EBFE09 /* BGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3992979B19D2B56700EBFE09 /* BGView.m */; };
+		39A5C54F1A5A6A73001A6013 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A5C54E1A5A6A73001A6013 /* Student.m */; };
 		39ABCF76191CB1A600E9C19A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABCF75191CB1A600E9C19A /* Foundation.framework */; };
 		39ABCF78191CB1A600E9C19A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABCF77191CB1A600E9C19A /* CoreGraphics.framework */; };
 		39ABCF7A191CB1A600E9C19A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABCF79191CB1A600E9C19A /* UIKit.framework */; };
@@ -40,11 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		392749A61A591DA90094F728 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3992979419D2A81400EBFE09 /* connect_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_bg.png; sourceTree = "<group>"; };
 		3992979519D2A81400EBFE09 /* connect_view_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_head.png; sourceTree = "<group>"; };
 		3992979619D2A81400EBFE09 /* connect_view_progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_progress.png; sourceTree = "<group>"; };
 		3992979A19D2B56700EBFE09 /* BGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGView.h; sourceTree = "<group>"; };
 		3992979B19D2B56700EBFE09 /* BGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGView.m; sourceTree = "<group>"; };
+		39A5C54D1A5A6A73001A6013 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		39A5C54E1A5A6A73001A6013 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		39ABCF72191CB1A600E9C19A /* TestExtern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestExtern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39ABCF75191CB1A600E9C19A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39ABCF77191CB1A600E9C19A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +142,8 @@
 				39ABCFAE191CB53500E9C19A /* TTConst.m */,
 				3992979A19D2B56700EBFE09 /* BGView.h */,
 				3992979B19D2B56700EBFE09 /* BGView.m */,
+				39A5C54D1A5A6A73001A6013 /* Student.h */,
+				39A5C54E1A5A6A73001A6013 /* Student.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
 				39ABCF7C191CB1A600E9C19A /* Supporting Files */,
 			);
@@ -154,6 +160,7 @@
 				39ABCF7E191CB1A600E9C19A /* InfoPlist.strings */,
 				39ABCF81191CB1A600E9C19A /* main.m */,
 				39ABCF83191CB1A600E9C19A /* TestExtern-Prefix.pch */,
+				392749A61A591DA90094F728 /* Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -280,6 +287,7 @@
 				39ABCF8C191CB1A600E9C19A /* ViewController.m in Sources */,
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
+				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
 				3992979C19D2B56700EBFE09 /* BGView.m in Sources */,
 			);

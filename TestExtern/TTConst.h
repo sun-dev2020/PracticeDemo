@@ -9,4 +9,7 @@
 #import <Foundation/Foundation.h>
 @interface TTConst : NSObject
 
+
++(TTConst *)shareTTConst;
+
 @end

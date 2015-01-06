@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "TTViewController.h"
 #import "BGView.h"
+#import "Header.h"
+#import "Student.h"
 const NSString *externConstString =@"first";
+
+
+extern NSString *url;
 
 @interface ViewController ()
 {
@@ -26,15 +31,17 @@ const NSString *externConstString =@"first";
 {
     [super viewDidLoad];
 	// Do any additional seatup after loading the view, typically from a nib.
+   url =@"asdsad";
+    
    staticString =@"new static";
    constString2 =@"new const";
 //   constString =@"new constr";
    externConstString =@"new extern";
     NSLog(@"extern %@ const %@ const2 %@  static %@",externConstString,constString ,constString2,staticString);
     
-    TTViewController*tt =[[TTViewController alloc]initWithNibName:nil bundle:nil];
-    
+//    TTViewController*tt =[[TTViewController alloc]initWithNibName:nil bundle:nil];
 //    [self.navigationController pushViewController:tt animated:YES];
+    
     struct SSPoint aPoint ;
     aPoint.x =10 ;
     NSLog(@"POint == %d",oPoint.m);
@@ -46,6 +53,7 @@ const NSString *externConstString =@"first";
     
     yellow = [[BGView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
     [self.view addSubview:yellow];
+
     
     view =[[UIView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
     UIImageView *head =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connect_view_bg"]];
@@ -62,6 +70,19 @@ const NSString *externConstString =@"first";
     
     [self change];
     
+    
+    Student *student =[[Student alloc] init];
+    student.age = 18 ;
+    student.sex = YES ;
+    student.name = @"jason";
+    // 归档模型对象
+    NSString *documentPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [documentPath stringByAppendingPathComponent:@"student.data"];
+    [NSKeyedArchiver archiveRootObject:student toFile:path];
+    
+    // 从文件中读取模型对象
+    Student *stu = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
     
     
 //    [CATransaction begin];
