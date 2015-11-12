@@ -75,22 +75,27 @@ extern NSString *url;
     student.age = 18 ;
     student.sex = YES ;
     student.name = @"jason";
+    NSArray *allStudent = @[student];
     // 归档模型对象
     NSString *documentPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSString *path = [documentPath stringByAppendingPathComponent:@"student.data"];
-    [NSKeyedArchiver archiveRootObject:student toFile:path];
+    [NSKeyedArchiver archiveRootObject:allStudent toFile:path];
     
     // 从文件中读取模型对象
-    Student *stu = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
+    NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
+    NSLog(@" array = %@",array);
     
+    //对象添加KVO
+    [student addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
     
-//    [CATransaction begin];
-//    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-//    CGRect frame = self.headImage.frame ;
-//    self.headImage.layer.anchorPoint = self.headImage.center ;
-//    self.headImage.layer.position =
+    student.name = @"code";
     
+    //一定要执行remove
+    [student removeObserver:self forKeyPath:@"name"];
+}
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    NSLog(@" observeObj:%@  change:%@ ",object,change);
 }
 -(void)change{
     [UIView animateWithDuration:0.0001 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
