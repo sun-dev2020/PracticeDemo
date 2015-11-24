@@ -71,7 +71,9 @@ extern NSString *url;
     
     [self change];
     
+    [self testForKVO];
     [self testForAddButtonClickArea];
+    [self testForMutableCopy];
 }
 /**
 *  增大button可点击区域
@@ -87,6 +89,32 @@ extern NSString *url;
 - (void)btnClicked{
     NSLog(@" clicked  ");
 }
+
+/**
+*  测试copy和mutableCopy
+*/
+- (void)testForMutableCopy{
+    NSString *string = @"ABC";
+    NSString *copyString = [string copy];
+    NSMutableString *mCopyString = [string mutableCopy];
+    string = @"DEF";
+    NSLog(@" string: %@ , copy: %@ ,mcopy: %@  ",string,copyString,mCopyString);
+    
+    NSMutableString *mString = [NSMutableString stringWithFormat:@"mutableString"];
+    NSMutableString *copyMString = [mString mutableCopy];
+    NSString *copyStringm = [mString copy];
+    mString = [NSMutableString stringWithFormat:@"changeMutableString"];
+    NSLog(@" mstring:%@  , copy:%@ , mcopy:%@ ",mString,copyMString , copyStringm);
+    
+    //只有不可变对象的copy是指针拷贝（浅复制），其他情况都是内容拷贝（深复制）。
+    id immutableObject , mutableObject;
+    [immutableObject copy]; // 浅复制
+    [immutableObject mutableCopy]; //单层深复制
+    [mutableObject copy]; //单层深复制
+    [mutableObject mutableCopy]; //单层深复制
+}
+
+
 /**
 *  测试KVO
 */
@@ -95,6 +123,8 @@ extern NSString *url;
     student.age = 18 ;
     student.sex = YES ;
     student.name = @"jason";
+    student.location = @"location";
+    NSLog(@" property location: %@  ",student.g_location);
     NSArray *allStudent = @[student];
     // 归档模型对象
     NSString *documentPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];

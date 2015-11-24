@@ -14,5 +14,6 @@
 @property (nonatomic ,strong) NSString *name;
 @property (nonatomic ,assign) BOOL sex;
 
+@property (nonatomic ,strong,setter = s_location: , getter= g_location) NSString *location;
 
 @end
