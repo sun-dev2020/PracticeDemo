@@ -11,6 +11,7 @@
 #import "BGView.h"
 #import "Header.h"
 #import "Student.h"
+#import "UIButton+ClickArea.h"
 const NSString *externConstString =@"first";
 
 
@@ -70,7 +71,26 @@ extern NSString *url;
     
     [self change];
     
-    
+    [self testForAddButtonClickArea];
+}
+/**
+*  增大button可点击区域
+*/
+- (void)testForAddButtonClickArea{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100.0f, 300.0f, 50.0f, 50.0f);
+    btn.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btn setClickAreaWithTop:20.0f left:20.0f bottom:20.0f right:20.0f];
+}
+- (void)btnClicked{
+    NSLog(@" clicked  ");
+}
+/**
+*  测试KVO
+*/
+- (void)testForKVO{
     Student *student =[[Student alloc] init];
     student.age = 18 ;
     student.sex = YES ;
@@ -78,22 +98,23 @@ extern NSString *url;
     NSArray *allStudent = @[student];
     // 归档模型对象
     NSString *documentPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [documentPath stringByAppendingPathComponent:@"student.data"];
-    [NSKeyedArchiver archiveRootObject:allStudent toFile:path];
+    NSString *path = [documentPath stringByAppendingPathComponent:@"student.plist"];
+    BOOL success = [NSKeyedArchiver archiveRootObject:allStudent toFile:path];
     
     // 从文件中读取模型对象
     NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-//    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
-    NSLog(@" array = %@",array);
+    //    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
+    NSLog(@" array = %@ %d ",array,success);
     
     //对象添加KVO
     [student addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
     
     student.name = @"code";
     
-    //一定要执行remove
+    //student dealloc前一定要执行remove
     [student removeObserver:self forKeyPath:@"name"];
 }
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     NSLog(@" observeObj:%@  change:%@ ",object,change);
 }

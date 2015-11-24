@@ -28,6 +28,7 @@
 		39ABCFA1191CB1A700E9C19A /* TestExternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFA0191CB1A700E9C19A /* TestExternTests.m */; };
 		39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAB191CB1C800E9C19A /* TTViewController.m */; };
 		39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAE191CB53500E9C19A /* TTConst.m */; };
+		FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC48E911C040487001D286C /* UIButton+ClickArea.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		39ABCFAB191CB1C800E9C19A /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
 		39ABCFAD191CB53500E9C19A /* TTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTConst.h; sourceTree = "<group>"; };
 		39ABCFAE191CB53500E9C19A /* TTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTConst.m; sourceTree = "<group>"; };
+		FAC48E901C040487001D286C /* UIButton+ClickArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickArea.h"; sourceTree = "<group>"; };
+		FAC48E911C040487001D286C /* UIButton+ClickArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickArea.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				3992979B19D2B56700EBFE09 /* BGView.m */,
 				39A5C54D1A5A6A73001A6013 /* Student.h */,
 				39A5C54E1A5A6A73001A6013 /* Student.m */,
+				FAC48E901C040487001D286C /* UIButton+ClickArea.h */,
+				FAC48E911C040487001D286C /* UIButton+ClickArea.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
 				39ABCF7C191CB1A600E9C19A /* Supporting Files */,
 			);
@@ -286,6 +291,7 @@
 				39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */,
 				39ABCF8C191CB1A600E9C19A /* ViewController.m in Sources */,
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
+				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
 				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
