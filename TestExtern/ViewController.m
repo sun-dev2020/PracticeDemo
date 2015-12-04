@@ -27,11 +27,14 @@ extern NSString *url;
 @end
 
 @implementation ViewController
-
+@synthesize isallowornot = aisallowornot;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional seatup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    aisallowornot = YES;
+
+    NSLog(@" %d  %d ",self.isallowornot , aisallowornot);
    url =@"asdsad";
     
    staticString =@"new static";
@@ -39,13 +42,11 @@ extern NSString *url;
 //   constString =@"new constr";
    externConstString =@"new extern";
     NSLog(@"extern %@ const %@ const2 %@  static %@",externConstString,constString ,constString2,staticString);
-    
-//    TTViewController*tt =[[TTViewController alloc]initWithNibName:nil bundle:nil];
-//    [self.navigationController pushViewController:tt animated:YES];
+
     
     struct SSPoint aPoint ;
     aPoint.x =10 ;
-    NSLog(@"POint == %d",oPoint.m);
+
     self.scrollView.hidden = YES;
     self.scrollView.backgroundColor =[UIColor lightGrayColor];
     self.scrollView.contentSize =CGSizeMake(320, 800);
@@ -74,6 +75,14 @@ extern NSString *url;
     [self testForKVO];
     [self testForAddButtonClickArea];
     [self testForMutableCopy];
+    
+    [self testForURLSession];
+}
+- (void)awakeFromNib{
+    
+}
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    return self;
 }
 /**
 *  增大button可点击区域
@@ -88,6 +97,10 @@ extern NSString *url;
 }
 - (void)btnClicked{
     NSLog(@" clicked  ");
+    TTViewController*tt =[[TTViewController alloc]init];
+    [self presentViewController:tt animated:YES completion:^{
+        
+    }];
 }
 
 /**
@@ -112,6 +125,8 @@ extern NSString *url;
     [immutableObject mutableCopy]; //单层深复制
     [mutableObject copy]; //单层深复制
     [mutableObject mutableCopy]; //单层深复制
+    
+    //@property()中copy的修饰，是指不管传过来的是可变的还是不可变的对象，本身都会持有一份对象不可变的副本
 }
 
 
@@ -187,4 +202,31 @@ extern NSString *url;
 //    constString =@"asd";
     return nil;
 }
+
+- (void)testForURLSession{
+    // NSURLSession  Data  upload  download
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSLog(@" session response : %@ ",response);
+    }];
+    [task resume];
+    
+    NSData *data = [@"hello" dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+    }];
+    [uploadTask resume];
+    
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSURL *documentsURL = [NSURL fileURLWithPath:documentsPath];
+        NSURL *newFilePath = [documentsURL URLByAppendingPathComponent:[[response URL] lastPathComponent]];
+        [[NSFileManager defaultManager] copyItemAtURL:location toURL:newFilePath error:nil];
+    }];
+    [downloadTask resume];
+}
+
+
 @end

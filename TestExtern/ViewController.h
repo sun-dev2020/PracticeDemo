@@ -35,6 +35,7 @@ typedef struct OtherPoing {
 @interface ViewController : UIViewController<UIScrollViewDelegate>
 {
     OtherPoint oPoint;
+    Isallowed aisallowornot;
 }
 
 @property (nonatomic,assign) Isallowed isallowornot;

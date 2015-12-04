@@ -235,6 +235,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = keyrun;
 				TargetAttributes = {
+					39ABCF71191CB1A600E9C19A = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					39ABCF92191CB1A700E9C19A = {
 						TestTargetID = 39ABCF71191CB1A600E9C19A;
 					};

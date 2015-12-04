@@ -38,5 +38,13 @@
     }
     return self;
 }
-
++ (BOOL)resolveClassMethod:(SEL)sel{
+    return YES;
+}
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    return nil;
+}
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{
+    return nil;
+}
 @end
