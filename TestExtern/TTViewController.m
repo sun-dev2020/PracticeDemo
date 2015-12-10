@@ -34,7 +34,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receiveBackgroundTask) name:@"receiveBackgroundTask" object:nil];
     [NSTimer scheduledTimerWithTimeInterval:35.0f target:self selector:@selector(testForBackgroundRequest) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(printCount) userInfo:nil repeats:YES];
-//    [self testForBackgroundRequest];
+
+    [self testForBackgroundRequest];
 }
 - (void)printCount{
     NSLog(@"  repeat count : %d  ",count++);
@@ -44,19 +45,27 @@
     NSURL *url = [NSURL URLWithString:@"http://s1.music.126.net/download/osx/NeteaseMusic_1.3.1_366_web.dmg"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSession *session = [self backgroundSession];
-    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        NSLog(@" download success  error: %@ ",error);
-        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        NSURL *documentsURL = [NSURL fileURLWithPath:documentsPath];
-        NSURL *newFilePath = [documentsURL URLByAppendingPathComponent:[[response URL] lastPathComponent]];
-        [[NSFileManager defaultManager] copyItemAtURL:location toURL:newFilePath error:nil];
-    }];
-    [downloadTask resume];
+    //如果使用background模式 就使用downloadTaskWithRequest  而不是-downloadTaskWithRequest completionHandler
+//    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request];
+    /*
+     (NSURL *location, NSURLResponse *response, NSError *error) {
+     NSLog(@" download success  error: %@ ",error);
+     NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+     NSURL *documentsURL = [NSURL fileURLWithPath:documentsPath];
+     NSURL *newFilePath = [documentsURL URLByAppendingPathComponent:[[response URL] lastPathComponent]];
+     [[NSFileManager defaultManager] copyItemAtURL:location toURL:newFilePath error:nil];
+     */
+//    [downloadTask resume];
+    NSData *data = [@"Hello" dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromFile:nil];
+    [uploadTask resume];
+
 
 }
 - (void)receiveBackgroundTask{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"通知" message:@"接受到后台请求" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+
 }
 // iOS7 NSURLSession后台请求
 - (NSURLSession *)backgroundSession{
@@ -70,7 +79,7 @@
 }
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location{
-    
+    NSLog(@" did finish down ");
 }
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
 didCompleteWithError:(NSError *)error{
@@ -83,6 +92,15 @@ didCompleteWithError:(NSError *)error{
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session{
     NSLog(@" session did finish events ");
 }
+
+
+
+
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning

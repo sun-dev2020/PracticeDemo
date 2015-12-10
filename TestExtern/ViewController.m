@@ -71,6 +71,7 @@ extern NSString *url;
     [self.view addSubview:view];
     
     [self change];
+
     
     [self testForKVO];
     [self testForAddButtonClickArea];
