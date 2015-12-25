@@ -12,6 +12,8 @@
 #import "Header.h"
 #import "Student.h"
 #import "UIButton+ClickArea.h"
+#import "CoderModel.h"
+
 const NSString *externConstString =@"first";
 
 
@@ -78,6 +80,18 @@ extern NSString *url;
     [self testForMutableCopy];
     
     [self testForURLSession];
+    
+    [self testForKVC];
+}
+- (void)testForKVC{
+    NSDictionary *dic = @{@"key1":@"value1" , @"key2":@"value2"};
+    CoderModel *model = [[CoderModel alloc] initCodeModelWith:dic];
+    NSLog(@" model: %@ ",[model valueForKey:@"key1"]);
+    
+    //如果数组里的是对象类 有基本数据属性amount  也可以 把self替换成amount
+    NSArray *arr = @[@10 , @23 , @9];
+    NSLog(@" max: %@ ",[arr valueForKeyPath:@"@max.self"]);
+    
 }
 - (void)awakeFromNib{
     

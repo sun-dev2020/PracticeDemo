@@ -21,6 +21,7 @@
     [aCoder encodeInt:self.age forKey:ageKey];
     [aCoder encodeObject:self.name forKey:nameKey];
     [aCoder encodeBool:self.sex forKey:sexKey];
+
 }
 
 /**

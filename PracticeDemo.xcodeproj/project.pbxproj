@@ -28,7 +28,13 @@
 		39ABCFA1191CB1A700E9C19A /* TestExternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFA0191CB1A700E9C19A /* TestExternTests.m */; };
 		39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAB191CB1C800E9C19A /* TTViewController.m */; };
 		39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAE191CB53500E9C19A /* TTConst.m */; };
+		FA9F62A61C1ABD4B00799E1F /* tingyunApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A51C1ABD4B00799E1F /* tingyunApp.framework */; };
+		FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */; };
+		FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A91C1ABDDB00799E1F /* Security.framework */; };
+		FA9F62AC1C1ABDE700799E1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */; };
+		FA9F62AE1C1ABDED00799E1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62AD1C1ABDED00799E1F /* libz.dylib */; };
 		FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC48E911C040487001D286C /* UIButton+ClickArea.m */; };
+		FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE44B3D1C21031C007B84BC /* CoderModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +79,15 @@
 		39ABCFAB191CB1C800E9C19A /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
 		39ABCFAD191CB53500E9C19A /* TTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTConst.h; sourceTree = "<group>"; };
 		39ABCFAE191CB53500E9C19A /* TTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTConst.m; sourceTree = "<group>"; };
+		FA9F62A51C1ABD4B00799E1F /* tingyunApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = tingyunApp.framework; sourceTree = "<group>"; };
+		FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FA9F62A91C1ABDDB00799E1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA9F62AD1C1ABDED00799E1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FAC48E901C040487001D286C /* UIButton+ClickArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickArea.h"; sourceTree = "<group>"; };
 		FAC48E911C040487001D286C /* UIButton+ClickArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickArea.m"; sourceTree = "<group>"; };
+		FAE44B3C1C21031C007B84BC /* CoderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderModel.h; sourceTree = "<group>"; };
+		FAE44B3D1C21031C007B84BC /* CoderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +95,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F62AE1C1ABDED00799E1F /* libz.dylib in Frameworks */,
+				FA9F62AC1C1ABDE700799E1F /* SystemConfiguration.framework in Frameworks */,
+				FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */,
+				FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */,
 				39ABCF78191CB1A600E9C19A /* CoreGraphics.framework in Frameworks */,
 				39ABCF7A191CB1A600E9C19A /* UIKit.framework in Frameworks */,
 				39ABCF76191CB1A600E9C19A /* Foundation.framework in Frameworks */,
+				FA9F62A61C1ABD4B00799E1F /* tingyunApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +141,10 @@
 		39ABCF74191CB1A600E9C19A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F62AD1C1ABDED00799E1F /* libz.dylib */,
+				FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */,
+				FA9F62A91C1ABDDB00799E1F /* Security.framework */,
+				FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */,
 				39ABCF75191CB1A600E9C19A /* Foundation.framework */,
 				39ABCF77191CB1A600E9C19A /* CoreGraphics.framework */,
 				39ABCF79191CB1A600E9C19A /* UIKit.framework */,
@@ -134,6 +156,7 @@
 		39ABCF7B191CB1A600E9C19A /* TestExtern */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F62A51C1ABD4B00799E1F /* tingyunApp.framework */,
 				39ABCF84191CB1A600E9C19A /* AppDelegate.h */,
 				39ABCF85191CB1A600E9C19A /* AppDelegate.m */,
 				39ABCF87191CB1A600E9C19A /* Main.storyboard */,
@@ -147,6 +170,8 @@
 				3992979B19D2B56700EBFE09 /* BGView.m */,
 				39A5C54D1A5A6A73001A6013 /* Student.h */,
 				39A5C54E1A5A6A73001A6013 /* Student.m */,
+				FAE44B3C1C21031C007B84BC /* CoderModel.h */,
+				FAE44B3D1C21031C007B84BC /* CoderModel.m */,
 				FAC48E901C040487001D286C /* UIButton+ClickArea.h */,
 				FAC48E911C040487001D286C /* UIButton+ClickArea.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
@@ -300,6 +325,7 @@
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
+				FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */,
 				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
 				3992979C19D2B56700EBFE09 /* BGView.m in Sources */,
@@ -427,10 +453,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 华龙 孙 (9P8L9G695L)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestExtern",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "60f3cd9a-8330-479c-991f-136725e0148d";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -440,10 +472,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestExtern",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "60f3cd9a-8330-479c-991f-136725e0148d";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

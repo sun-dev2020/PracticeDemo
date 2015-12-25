@@ -13,9 +13,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+    NSOperationQueue *taskQueue =[[NSOperationQueue alloc] init];
+    NSBlockOperation *blockTask =[NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"_block Operation__");
+    }];
+    NSInvocationOperation *invocationTask =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(doneOperation) object:nil];
+    [taskQueue addOperationWithBlock:^{
+        NSLog(@"  with block");
+    }];
+    [blockTask addDependency:invocationTask];
+    [taskQueue addOperation:blockTask];
+    [taskQueue addOperation:invocationTask];
+    
+    NSTimer *timer ;
+    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
+    
     return YES;
 }
-							
+- (void)doneOperation{
+    sleep(1);
+    NSLog(@" done ");
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

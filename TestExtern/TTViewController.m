@@ -34,7 +34,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receiveBackgroundTask) name:@"receiveBackgroundTask" object:nil];
     [NSTimer scheduledTimerWithTimeInterval:35.0f target:self selector:@selector(testForBackgroundRequest) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(printCount) userInfo:nil repeats:YES];
-
+    NSArray *arr = nil;
+//    NSString *s = arr[1];
     [self testForBackgroundRequest];
 }
 - (void)printCount{
