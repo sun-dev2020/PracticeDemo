@@ -28,8 +28,8 @@
     [taskQueue addOperation:blockTask];
     [taskQueue addOperation:invocationTask];
     
-    NSTimer *timer ;
-    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
+//    NSTimer *timer ;
+//    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
     
     return YES;
 }
@@ -68,5 +68,7 @@
 //    
 //    completionHandler();
 //}
+
+
 
 @end

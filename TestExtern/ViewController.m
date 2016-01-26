@@ -79,7 +79,7 @@ extern NSString *url;
     [self testForAddButtonClickArea];
     [self testForMutableCopy];
     
-    [self testForURLSession];
+//    [self testForURLSession];
     
     [self testForKVC];
 }

@@ -14,6 +14,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-#import <tingyunApp/NBSAppAgent.h>
 
 #endif
