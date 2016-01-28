@@ -83,6 +83,9 @@
         }];
         [session getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
             NSLog(@"  downloadTasks ======== %@ ",downloadTasks);
+            for (NSURLSessionDownloadTask *task in downloadTasks) {
+//                [task resume];
+            }
         }];
     }
     
