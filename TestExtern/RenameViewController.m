@@ -46,6 +46,9 @@ extern NSString* url;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@" runloop3 %@",[NSRunLoop currentRunLoop]);
+    
     [self extracted_method:nil];
 
     struct SSPoint aPoint;
@@ -98,6 +101,7 @@ extern NSString* url;
 }
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
+    self = [super initWithCoder:aDecoder];
     return self;
 }
 /**

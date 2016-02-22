@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A927A83E-FE26-4871-A2B0-1EFA9B5CB8E2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PracticeDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9219930B8A2D3F6DDFC36FAB887BC31434B4787E</key>
 		<string>https://github.com/SunMichael/ExternDemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PracticeDemo.xcodeproj/project.xcworkspace</string>
+	<string>PracticeDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9219930B8A2D3F6DDFC36FAB887BC31434B4787E</key>

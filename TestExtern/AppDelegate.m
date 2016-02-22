@@ -7,13 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "Person.h"
+#import "User.h"
 
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     
     NSOperationQueue *taskQueue =[[NSOperationQueue alloc] init];
     NSBlockOperation *blockTask =[NSBlockOperation blockOperationWithBlock:^{
@@ -28,10 +29,25 @@
     [taskQueue addOperation:blockTask];
     [taskQueue addOperation:invocationTask];
     
-//    NSTimer *timer ;
-//    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(repeatCountNumber) userInfo:nil repeats:NO];
+    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
     
+    
+    [[User shareUser] insertObj:@"C" index:1];
+    [self performSelectorInBackground:@selector(deleteobj) withObject:nil];
+    [self deleteobj];
+    NSLog(@" runloop1 %@ ",[NSRunLoop currentRunLoop]);
+    [[User shareUser]sendMessage:@"word"];
     return YES;
+}
+
+- (void)repeatCountNumber{
+    NSLog(@" repeat %@ ",[NSRunLoop currentRunLoop]);
+}
+
+- (void)deleteobj{
+    [[User shareUser] deleteObjIndex:0];
+    NSLog(@" runloop2 %@ ",[NSRunLoop currentRunLoop]);
 }
 - (void)doneOperation{
     sleep(1);

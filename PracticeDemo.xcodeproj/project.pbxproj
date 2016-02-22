@@ -28,6 +28,8 @@
 		39ABCFA1191CB1A700E9C19A /* TestExternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFA0191CB1A700E9C19A /* TestExternTests.m */; };
 		39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAB191CB1C800E9C19A /* TTViewController.m */; };
 		39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAE191CB53500E9C19A /* TTConst.m */; };
+		FA1A87071C7AE6ED00219069 /* MessageForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A87061C7AE6ED00219069 /* MessageForwarding.m */; };
+		FA3FDB361C7566E800C72D40 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3FDB351C7566E800C72D40 /* User.m */; };
 		FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */; };
 		FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A91C1ABDDB00799E1F /* Security.framework */; };
 		FA9F62AC1C1ABDE700799E1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */; };
@@ -79,6 +81,11 @@
 		39ABCFAB191CB1C800E9C19A /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
 		39ABCFAD191CB53500E9C19A /* TTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTConst.h; sourceTree = "<group>"; };
 		39ABCFAE191CB53500E9C19A /* TTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTConst.m; sourceTree = "<group>"; };
+		FA1A87051C7AE6ED00219069 /* MessageForwarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwarding.h; sourceTree = "<group>"; };
+		FA1A87061C7AE6ED00219069 /* MessageForwarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwarding.m; sourceTree = "<group>"; };
+		FA3FDB311C7566C800C72D40 /* TestExtern-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestExtern-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA3FDB341C7566E800C72D40 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FA3FDB351C7566E800C72D40 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		FA9F62A91C1ABDDB00799E1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -175,8 +182,13 @@
 				FAE44B3D1C21031C007B84BC /* CoderModel.m */,
 				FAC48E901C040487001D286C /* UIButton+ClickArea.h */,
 				FAC48E911C040487001D286C /* UIButton+ClickArea.m */,
+				FA3FDB341C7566E800C72D40 /* User.h */,
+				FA3FDB351C7566E800C72D40 /* User.m */,
+				FA1A87051C7AE6ED00219069 /* MessageForwarding.h */,
+				FA1A87061C7AE6ED00219069 /* MessageForwarding.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
 				39ABCF7C191CB1A600E9C19A /* Supporting Files */,
+				FA3FDB311C7566C800C72D40 /* TestExtern-Bridging-Header.h */,
 			);
 			path = TestExtern;
 			sourceTree = "<group>";
@@ -258,6 +270,7 @@
 		39ABCF6A191CB1A600E9C19A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = keyrun;
 				TargetAttributes = {
@@ -327,9 +340,11 @@
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
+				FA3FDB361C7566E800C72D40 /* User.m in Sources */,
 				FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */,
 				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
+				FA1A87071C7AE6ED00219069 /* MessageForwarding.m in Sources */,
 				3992979C19D2B56700EBFE09 /* BGView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +470,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 华龙 孙 (9P8L9G695L)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestExtern",
@@ -463,8 +479,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "60f3cd9a-8330-479c-991f-136725e0148d";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestExtern/TestExtern-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -474,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestExtern",
@@ -481,8 +502,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "60f3cd9a-8330-479c-991f-136725e0148d";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestExtern/TestExtern-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

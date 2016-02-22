@@ -10,4 +10,12 @@
 
 @implementation Person
 
+-(instancetype)init{
+    self.sex = YES;
+    NSLog(@" ___ %@ ",[super init]);
+    return [super init];
+}
+
+
+
 @end
