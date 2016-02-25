@@ -18,7 +18,7 @@
     
     NSOperationQueue *taskQueue =[[NSOperationQueue alloc] init];
     NSBlockOperation *blockTask =[NSBlockOperation blockOperationWithBlock:^{
-        [NSThread sleepForTimeInterval:2];
+//        [NSThread sleepForTimeInterval:2];
         NSLog(@"_block Operation__");
     }];
     NSInvocationOperation *invocationTask =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(doneOperation) object:nil];
@@ -38,7 +38,16 @@
     [self deleteobj];
     NSLog(@" runloop1 %@ ",[NSRunLoop currentRunLoop]);
     [[User shareUser]sendMessage:@"word"];
+    
+    User *user = [User shareUser];
+    user.name = @"sun";
+    [user addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    user.name = @"hua";
     return YES;
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    NSLog(@" KVO change %@ ",change);
 }
 
 - (void)repeatCountNumber{
@@ -50,7 +59,7 @@
     NSLog(@" runloop2 %@ ",[NSRunLoop currentRunLoop]);
 }
 - (void)doneOperation{
-    sleep(1);
+//    sleep(1);
     NSLog(@" done ");
 }
 - (void)applicationWillResignActive:(UIApplication *)application

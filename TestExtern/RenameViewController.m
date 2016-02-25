@@ -87,14 +87,22 @@ extern NSString* url;
 }
 - (void)testForKVC
 {
-    NSDictionary* dic = @{ @"key1" : @"value1",
-        @"key2" : @"value2" };
-    CoderModel* model = [[CoderModel alloc] initCodeModelWith:dic];
-    NSLog(@" model: %@ ", [model valueForKey:@"key1"]);
-
+//    NSDictionary* dic = @{ @"key" : @"value1",
+//        @"key2" : @"value2" };
+    //以下是测试观察依赖键
+    Student *student = [[Student alloc] init];
+    student.age = 20;
+    CoderModel* model = [[CoderModel alloc] init:student];
+    [model addObserver:self forKeyPath:@"information" options:NSKeyValueObservingOptionNew context:nil];
+    student.age = 10;
+    NSLog(@" model: %@ ", model);
+    
     //如果数组里的是对象类 有基本数据属性amount  也可以 把self替换成amount
+    //集合运算符，简单集合运算符共有@avg，@count，@max，@min，@sum5种
     NSArray* arr = @[ @10, @23, @9 ];
     NSLog(@" max: %@ ", [arr valueForKeyPath:@"@max.self"]);
+    
+    [model removeObserver:self forKeyPath:@"information"];
 }
 - (void)awakeFromNib
 {
@@ -115,6 +123,13 @@ extern NSString* url;
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
     [btn setClickAreaWithTop:20.0f left:20.0f bottom:20.0f right:20.0f];
+    
+    btn.adress = @"adress";
+    
+    [btn addObserver:self forKeyPath:@"adress" options:NSKeyValueObservingOptionNew context:nil];
+    btn.adress = @"new adress";
+    
+    [btn removeObserver:self forKeyPath:@"adress"];
 }
 - (void)btnClicked
 {
@@ -177,7 +192,8 @@ extern NSString* url;
     //对象添加KVO
     [student addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
 
-    student.name = @"code";
+//    student.name = @"code";
+    [student setValue:@"code" forKey:@"name"];
 
     //student dealloc前一定要执行remove
     [student removeObserver:self forKeyPath:@"name"];

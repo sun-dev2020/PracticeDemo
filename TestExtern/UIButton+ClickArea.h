@@ -12,4 +12,9 @@
 
 - (void)setClickAreaWithTop:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right;
 
+
+- (void)setAdress:(NSString *)adress;
+- (NSString *)adress;
+
+
 @end

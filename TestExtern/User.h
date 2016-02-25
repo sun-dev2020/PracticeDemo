@@ -10,6 +10,8 @@
 
 @interface User : NSObject
 
+@property (nonatomic ,copy) NSString *name;
+
 +(User *)shareUser;
 
 -(void)insertObj:(NSString *)obj index:(NSInteger)index;

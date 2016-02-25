@@ -39,7 +39,7 @@ static int count;
     if (mArray.count > index) {
         @synchronized(mArray) {
            [mArray removeObjectsAtIndexes:[NSIndexSet indexSetWithIndex:index]];
-            sleep(1);
+//            sleep(1);
             NSLog(@" delete %@ ",mArray);
         }
     }
