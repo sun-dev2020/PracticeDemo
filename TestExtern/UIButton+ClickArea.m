@@ -11,7 +11,6 @@
 
 @implementation UIButton (ClickArea)
 
-
 static char topKey;
 static char leftKey;
 static char bottomKey;
@@ -45,5 +44,17 @@ static char rightKey;
         return CGRectContainsPoint(rect, point) ? self : nil;
     }
 }
+
+
+//-------测试分类添加的属性能否支持KVO----支持---//
+- (void)setAdress:(NSString *)adress{
+    objc_setAssociatedObject(self, "adress", adress, OBJC_ASSOCIATION_COPY);
+}
+- (NSString *)adress{
+    return objc_getAssociatedObject(self, "adress");
+}
+
+
+
 
 @end

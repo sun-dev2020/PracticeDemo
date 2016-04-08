@@ -19,7 +19,7 @@
 		39ABCF82191CB1A600E9C19A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCF81191CB1A600E9C19A /* main.m */; };
 		39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCF85191CB1A600E9C19A /* AppDelegate.m */; };
 		39ABCF89191CB1A600E9C19A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39ABCF87191CB1A600E9C19A /* Main.storyboard */; };
-		39ABCF8C191CB1A600E9C19A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCF8B191CB1A600E9C19A /* ViewController.m */; };
+		39ABCF8C191CB1A600E9C19A /* RenameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCF8B191CB1A600E9C19A /* RenameViewController.m */; };
 		39ABCF8E191CB1A600E9C19A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39ABCF8D191CB1A600E9C19A /* Images.xcassets */; };
 		39ABCF95191CB1A700E9C19A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABCF94191CB1A700E9C19A /* XCTest.framework */; };
 		39ABCF96191CB1A700E9C19A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABCF75191CB1A600E9C19A /* Foundation.framework */; };
@@ -28,7 +28,17 @@
 		39ABCFA1191CB1A700E9C19A /* TestExternTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFA0191CB1A700E9C19A /* TestExternTests.m */; };
 		39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAB191CB1C800E9C19A /* TTViewController.m */; };
 		39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ABCFAE191CB53500E9C19A /* TTConst.m */; };
+		FA1A87071C7AE6ED00219069 /* MessageForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A87061C7AE6ED00219069 /* MessageForwarding.m */; };
+		FA3FDB361C7566E800C72D40 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3FDB351C7566E800C72D40 /* User.m */; };
+		FA573C071C97EDE100ABC788 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA573C061C97EDE100ABC788 /* Default-568h@2x.png */; };
+		FA573C0D1C97EF2900ABC788 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */; };
+		FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */; };
+		FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A91C1ABDDB00799E1F /* Security.framework */; };
+		FA9F62AC1C1ABDE700799E1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */; };
+		FA9F62AE1C1ABDED00799E1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62AD1C1ABDED00799E1F /* libz.dylib */; };
 		FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC48E911C040487001D286C /* UIButton+ClickArea.m */; };
+		FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE44B3D1C21031C007B84BC /* CoderModel.m */; };
+		FAF197B91C5864330065A28B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF197B81C5864330065A28B /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +71,8 @@
 		39ABCF84191CB1A600E9C19A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39ABCF85191CB1A600E9C19A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		39ABCF88191CB1A600E9C19A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		39ABCF8A191CB1A600E9C19A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		39ABCF8B191CB1A600E9C19A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		39ABCF8A191CB1A600E9C19A /* RenameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RenameViewController.h; sourceTree = "<group>"; };
+		39ABCF8B191CB1A600E9C19A /* RenameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenameViewController.m; sourceTree = "<group>"; };
 		39ABCF8D191CB1A600E9C19A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		39ABCF93191CB1A700E9C19A /* TestExternTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestExternTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39ABCF94191CB1A700E9C19A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -73,8 +83,24 @@
 		39ABCFAB191CB1C800E9C19A /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
 		39ABCFAD191CB53500E9C19A /* TTConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTConst.h; sourceTree = "<group>"; };
 		39ABCFAE191CB53500E9C19A /* TTConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTConst.m; sourceTree = "<group>"; };
+		FA1A87051C7AE6ED00219069 /* MessageForwarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwarding.h; sourceTree = "<group>"; };
+		FA1A87061C7AE6ED00219069 /* MessageForwarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwarding.m; sourceTree = "<group>"; };
+		FA3FDB311C7566C800C72D40 /* TestExtern-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestExtern-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA3FDB341C7566E800C72D40 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FA3FDB351C7566E800C72D40 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FA573C061C97EDE100ABC788 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FA573C0B1C97EF2900ABC788 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FA9F62A91C1ABDDB00799E1F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FA9F62AD1C1ABDED00799E1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FAC48E901C040487001D286C /* UIButton+ClickArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickArea.h"; sourceTree = "<group>"; };
 		FAC48E911C040487001D286C /* UIButton+ClickArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickArea.m"; sourceTree = "<group>"; };
+		FAE44B3C1C21031C007B84BC /* CoderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoderModel.h; sourceTree = "<group>"; };
+		FAE44B3D1C21031C007B84BC /* CoderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoderModel.m; sourceTree = "<group>"; };
+		FAF197B71C5864330065A28B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
+		FAF197B81C5864330065A28B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +108,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9F62AE1C1ABDED00799E1F /* libz.dylib in Frameworks */,
+				FA9F62AC1C1ABDE700799E1F /* SystemConfiguration.framework in Frameworks */,
+				FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */,
+				FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */,
 				39ABCF78191CB1A600E9C19A /* CoreGraphics.framework in Frameworks */,
 				39ABCF7A191CB1A600E9C19A /* UIKit.framework in Frameworks */,
 				39ABCF76191CB1A600E9C19A /* Foundation.framework in Frameworks */,
@@ -104,6 +134,7 @@
 		39ABCF69191CB1A600E9C19A = {
 			isa = PBXGroup;
 			children = (
+				FA573C061C97EDE100ABC788 /* Default-568h@2x.png */,
 				39ABCF7B191CB1A600E9C19A /* TestExtern */,
 				39ABCF9A191CB1A700E9C19A /* TestExternTests */,
 				39ABCF74191CB1A600E9C19A /* Frameworks */,
@@ -123,6 +154,10 @@
 		39ABCF74191CB1A600E9C19A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA9F62AD1C1ABDED00799E1F /* libz.dylib */,
+				FA9F62AB1C1ABDE700799E1F /* SystemConfiguration.framework */,
+				FA9F62A91C1ABDDB00799E1F /* Security.framework */,
+				FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */,
 				39ABCF75191CB1A600E9C19A /* Foundation.framework */,
 				39ABCF77191CB1A600E9C19A /* CoreGraphics.framework */,
 				39ABCF79191CB1A600E9C19A /* UIKit.framework */,
@@ -137,20 +172,31 @@
 				39ABCF84191CB1A600E9C19A /* AppDelegate.h */,
 				39ABCF85191CB1A600E9C19A /* AppDelegate.m */,
 				39ABCF87191CB1A600E9C19A /* Main.storyboard */,
-				39ABCF8A191CB1A600E9C19A /* ViewController.h */,
-				39ABCF8B191CB1A600E9C19A /* ViewController.m */,
+				39ABCF8A191CB1A600E9C19A /* RenameViewController.h */,
+				39ABCF8B191CB1A600E9C19A /* RenameViewController.m */,
 				39ABCFAA191CB1C800E9C19A /* TTViewController.h */,
 				39ABCFAB191CB1C800E9C19A /* TTViewController.m */,
 				39ABCFAD191CB53500E9C19A /* TTConst.h */,
 				39ABCFAE191CB53500E9C19A /* TTConst.m */,
 				3992979A19D2B56700EBFE09 /* BGView.h */,
 				3992979B19D2B56700EBFE09 /* BGView.m */,
+				FAF197B71C5864330065A28B /* Person.h */,
+				FAF197B81C5864330065A28B /* Person.m */,
 				39A5C54D1A5A6A73001A6013 /* Student.h */,
 				39A5C54E1A5A6A73001A6013 /* Student.m */,
+				FAE44B3C1C21031C007B84BC /* CoderModel.h */,
+				FAE44B3D1C21031C007B84BC /* CoderModel.m */,
 				FAC48E901C040487001D286C /* UIButton+ClickArea.h */,
 				FAC48E911C040487001D286C /* UIButton+ClickArea.m */,
+				FA573C0B1C97EF2900ABC788 /* UIImage+RoundedCorner.h */,
+				FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */,
+				FA3FDB341C7566E800C72D40 /* User.h */,
+				FA3FDB351C7566E800C72D40 /* User.m */,
+				FA1A87051C7AE6ED00219069 /* MessageForwarding.h */,
+				FA1A87061C7AE6ED00219069 /* MessageForwarding.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
 				39ABCF7C191CB1A600E9C19A /* Supporting Files */,
+				FA3FDB311C7566C800C72D40 /* TestExtern-Bridging-Header.h */,
 			);
 			path = TestExtern;
 			sourceTree = "<group>";
@@ -232,6 +278,7 @@
 		39ABCF6A191CB1A600E9C19A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = keyrun;
 				TargetAttributes = {
@@ -276,6 +323,7 @@
 				3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */,
 				39ABCF80191CB1A600E9C19A /* InfoPlist.strings in Resources */,
 				3992979719D2A81400EBFE09 /* connect_view_bg.png in Resources */,
+				FA573C071C97EDE100ABC788 /* Default-568h@2x.png in Resources */,
 				39ABCF89191CB1A600E9C19A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,12 +344,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				39ABCFAC191CB1C800E9C19A /* TTViewController.m in Sources */,
-				39ABCF8C191CB1A600E9C19A /* ViewController.m in Sources */,
+				39ABCF8C191CB1A600E9C19A /* RenameViewController.m in Sources */,
+				FAF197B91C5864330065A28B /* Person.m in Sources */,
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
+				FA3FDB361C7566E800C72D40 /* User.m in Sources */,
+				FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */,
+				FA573C0D1C97EF2900ABC788 /* UIImage+RoundedCorner.m in Sources */,
 				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
+				FA1A87071C7AE6ED00219069 /* MessageForwarding.m in Sources */,
 				3992979C19D2B56700EBFE09 /* BGView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,11 +479,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestExtern",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestExtern/TestExtern-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -439,11 +503,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestExtern",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestExtern/TestExtern-Prefix.pch";
 				INFOPLIST_FILE = "TestExtern/TestExtern-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestExtern/TestExtern-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

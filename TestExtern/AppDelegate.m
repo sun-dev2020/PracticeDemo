@@ -7,15 +7,61 @@
 //
 
 #import "AppDelegate.h"
+#import "Person.h"
+#import "User.h"
 
 @implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSOperationQueue *taskQueue =[[NSOperationQueue alloc] init];
+    NSBlockOperation *blockTask =[NSBlockOperation blockOperationWithBlock:^{
+//        [NSThread sleepForTimeInterval:2];
+        NSLog(@"_block Operation__");
+    }];
+    NSInvocationOperation *invocationTask =[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(doneOperation) object:nil];
+    [taskQueue addOperationWithBlock:^{
+        NSLog(@"  with block");
+    }];
+    [blockTask addDependency:invocationTask];
+    [taskQueue addOperation:blockTask];
+    [taskQueue addOperation:invocationTask];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(repeatCountNumber) userInfo:nil repeats:NO];
+    [[NSRunLoop currentRunLoop ]addTimer:timer forMode:NSRunLoopCommonModes];
+    
+    
+    [[User shareUser] insertObj:@"C" index:1];
+    [self performSelectorInBackground:@selector(deleteobj) withObject:nil];
+    [self deleteobj];
+    NSLog(@" runloop1 %@ ",[NSRunLoop currentRunLoop]);
+    [[User shareUser]sendMessage:@"word"];
+    
+    User *user = [User shareUser];
+    user.name = @"sun";
+    [user addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    user.name = @"hua";
     return YES;
 }
-							
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    NSLog(@" KVO change %@ ",change);
+}
+
+- (void)repeatCountNumber{
+    NSLog(@" repeat %@ ",[NSRunLoop currentRunLoop]);
+}
+
+- (void)deleteobj{
+    [[User shareUser] deleteObjIndex:0];
+    NSLog(@" runloop2 %@ ",[NSRunLoop currentRunLoop]);
+}
+- (void)doneOperation{
+//    sleep(1);
+    NSLog(@" done ");
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -43,9 +89,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
-    
-    completionHandler();
-}
+//-(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
+//    
+//    completionHandler();
+//}
+
+
 
 @end

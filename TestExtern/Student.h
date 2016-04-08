@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "Person.h"
 
-@interface Student : NSObject  <NSCoding>
+@interface Student : Person  <NSCoding , JSExport>
 
 @property (nonatomic ,assign) int age;
 @property (nonatomic ,strong) NSString *name;
-@property (nonatomic ,assign) BOOL sex;
 
 @property (nonatomic ,strong,setter = s_location: , getter= g_location) NSString *location;
 

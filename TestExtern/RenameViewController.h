@@ -32,13 +32,13 @@ typedef struct OtherPoing {
     int n ;
 }OtherPoint;
 
-@interface ViewController : UIViewController<UIScrollViewDelegate>
+@interface RenameViewController : UIViewController<UIScrollViewDelegate>
 {
     OtherPoint oPoint;
     Isallowed aisallowornot;
 }
 
-@property (nonatomic,assign) Isallowed isallowornot;
+@property (nonatomic,assign) Isallowed isAllowOrNot;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
  
