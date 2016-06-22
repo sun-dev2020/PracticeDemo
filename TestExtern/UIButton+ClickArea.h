@@ -10,6 +10,8 @@
 
 @interface UIButton (ClickArea)
 
+@property(nonatomic, assign) BOOL need;
+
 - (void)setClickAreaWithTop:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right;
 
 

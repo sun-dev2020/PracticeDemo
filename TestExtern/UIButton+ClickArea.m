@@ -16,6 +16,15 @@ static char leftKey;
 static char bottomKey;
 static char rightKey;
 
+@dynamic need;
+
+-(BOOL)need{
+    return objc_getAssociatedObject(self, "needkey");
+}
+-(void)setNeed:(BOOL)need{
+    objc_setAssociatedObject(self, "needkey", @(need), OBJC_ASSOCIATION_COPY);
+}
+
 - (void)setClickAreaWithTop:(CGFloat)top left:(CGFloat)left bottom:(CGFloat)bottom right:(CGFloat)right{
     objc_setAssociatedObject(self, &topKey, [NSNumber numberWithFloat:top], OBJC_ASSOCIATION_COPY_NONATOMIC);
     objc_setAssociatedObject(self, &leftKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);

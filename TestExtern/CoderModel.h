@@ -22,7 +22,8 @@
 
 @property(nonatomic, copy) NSString* information;
 @property(nonatomic, strong) Student *student;
-
+@property(nonatomic, assign) NSString* weakstr;
+@property(nonatomic, assign) int wek;
 //@property(nonatomic, copy) NSString *key1;
 
 -(instancetype)initCodeModelWith:(NSDictionary *)dic;

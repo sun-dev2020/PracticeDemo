@@ -55,7 +55,7 @@
     [endBtn setBackgroundColor:[UIColor redColor]];
     [endBtn setTitle:@"暂停" forState:UIControlStateNormal];
     [self.view addSubview:endBtn];
-
+    
     
 }
 - (void)pasure{

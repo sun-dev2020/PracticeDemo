@@ -13,10 +13,15 @@
 #import "Student.h"
 #import "TTViewController.h"
 #import "UIButton+ClickArea.h"
+#import "SecController.h"
+#import <objc/runtime.h>
 
 const NSString* externConstString = @"first";
 
 extern NSString* url;
+
+
+
 
 @interface RenameViewController () {
     NSString* nomalString;
@@ -38,9 +43,12 @@ extern NSString* url;
 
     staticString = @"new static";
     constString2 = @"new const";
+
     //   constString =@"new constr";
     externConstString = @"new extern";
     NSLog(@"extern %@ const %@ const2 %@  static %@", externConstString, constString, constString2, staticString);
+    
+    
 }
 
 - (void)viewDidLoad
@@ -95,6 +103,7 @@ extern NSString* url;
     CoderModel* model = [[CoderModel alloc] init:student];
     [model addObserver:self forKeyPath:@"information" options:NSKeyValueObservingOptionNew context:nil];
     student.age = 10;
+    model.weakstr = @"assign";
     NSLog(@" model: %@ ", model);
     
     //如果数组里的是对象类 有基本数据属性amount  也可以 把self替换成amount
@@ -121,9 +130,10 @@ extern NSString* url;
     btn.frame = CGRectMake(100.0f, 300.0f, 50.0f, 50.0f);
     btn.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:btn];
+    btn.need = YES;
     [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
     [btn setClickAreaWithTop:20.0f left:20.0f bottom:20.0f right:20.0f];
-    
+    NSLog(@" btn need  %d",btn.need);
     btn.adress = @"adress";
     
     [btn addObserver:self forKeyPath:@"adress" options:NSKeyValueObservingOptionNew context:nil];
@@ -135,9 +145,14 @@ extern NSString* url;
 {
     NSLog(@" clicked  ");
     TTViewController* tt = [[TTViewController alloc] init];
-    [self presentViewController:tt animated:YES completion:^{
-
-    }];
+    SecController *secVC = [[SecController alloc] init];
+    NSMutableArray *mArray = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+    [mArray addObject:tt];
+    [mArray addObject:secVC];
+    [self.navigationController setViewControllers:mArray animated:YES];
+//    [self presentViewController:tt animated:YES completion:^{
+//
+//    }];
 }
 
 /**
@@ -177,7 +192,8 @@ extern NSString* url;
     student.sex = YES;
     student.name = @"jason";
     student.location = @"location";
-    NSLog(@" property location: %@  ", student.g_location);
+   
+    NSLog(@" property location: %@  %@ ", [student class],[Student class]);
     NSArray* allStudent = @[ student ];
     // 归档模型对象
     NSString* documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -271,5 +287,7 @@ extern NSString* url;
     }];
     [downloadTask resume];
 }
+
+
 
 @end
