@@ -11,11 +11,18 @@
 @implementation Person
 
 -(instancetype)init{
-    self.sex = YES;
+//    self.sex = YES;
     NSLog(@" ___ %@ ",[super init]);
     return [super init];
 }
 
-
-
+- (id)copyWithZone:(nullable NSZone *)zone{
+    Person *person = [[Person allocWithZone:zone] init];
+    return person;
+}
+- (id)mutableCopyWithZone:(nullable NSZone *)zone{
+    Person *person = [[Person allocWithZone:zone] init];
+    person.sex = _sex;
+    return person;
+}
 @end

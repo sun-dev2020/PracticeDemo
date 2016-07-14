@@ -63,8 +63,34 @@
     NSArray *art = @[@(1),@"asd"];
     NSLog(@" == %d  %@",CGPointYEqualToPoint(CGPointMake(0, 1), CGPointMake(0, 2)),art);
     
+   
+    [self testForCopy];
+    
+    
     return YES;
 }
+
+
+- (void)testForCopy{
+    //对引用类型   copy是创建一个新的对象 并且是初始化过的  mutableCopy就和直接引用指针一样
+    Person *person = [[Person alloc] init];
+    person.sex = NO;
+    person.name = @"AAA";
+    person.sex = YES;
+    person.name = @"NNNN";
+    Person *person2 = [person copy];
+    Person *person3 = person;
+    NSLog(@" person %@  %@  %@ ",person.name , person2.name,person3.name);
+    
+    //对集合类型  immutable copy是指针拷贝   其他都是内容拷贝  ，集合内的对象还是指针拷贝
+    NSArray *array1 = @[person];
+    NSArray *array2 = [array1 copy];
+    person.name = @"KKK";
+    NSLog(@" array2  %@ %@",((Person *)array2[0]).name,((Person *)array1[0]).name );
+    
+    
+}
+
 
 - (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary<NSString*, id>*)change context:(void*)context
 {

@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject
+@interface Person : NSObject <NSCopying ,NSMutableCopying>
 
 @property (nonatomic ,assign) BOOL sex;
-
+@property (nonatomic ,copy) NSString *name;
 @end
