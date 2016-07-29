@@ -204,7 +204,7 @@ extern NSString* url;
     NSArray* array = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     //    NSLog(@" Student name= %@, age= %d ,sex =%d ",stu.name ,stu.age ,stu.sex);
     NSLog(@" array = %@ %d ", array, success);
-
+    [student mutableArrayValueForKey:@""];
     //对象添加KVO
     [student addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
 

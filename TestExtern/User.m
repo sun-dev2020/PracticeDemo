@@ -14,6 +14,7 @@ static NSMutableArray *mArray ;
 static int count;
 @implementation User
 
+
 +(User *)shareUser{
     static dispatch_once_t onceToken;
     static User *user = nil;
@@ -52,9 +53,9 @@ static int count;
 //////Runtime
 
 //正常调用
-//-(void)sendMessage:(NSString *)word{
-//    
-//}
+-(void)sendMessage:(NSString *)word{
+    
+}
 //当对象在类对象继承体系中没有找到sendMessage后，会有3次机会拯救
 //1.Method Resolution
 + (BOOL)resolveInstanceMethod:(SEL)sel{

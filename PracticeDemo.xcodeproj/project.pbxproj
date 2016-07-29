@@ -6,6 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FA6966F11D46FDD70076255B /* Shell */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FA6966F21D46FDD70076255B /* Build configuration list for PBXAggregateTarget "Shell" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Shell;
+			productName = Shell;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3992979719D2A81400EBFE09 /* connect_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979419D2A81400EBFE09 /* connect_view_bg.png */; };
 		3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979519D2A81400EBFE09 /* connect_view_head.png */; };
@@ -33,6 +46,7 @@
 		FA573C071C97EDE100ABC788 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA573C061C97EDE100ABC788 /* Default-568h@2x.png */; };
 		FA573C0D1C97EF2900ABC788 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */; };
 		FA6017961D0017280032739C /* BlockCode.c in Sources */ = {isa = PBXBuildFile; fileRef = FA6017941D0017280032739C /* BlockCode.c */; };
+		FA6966F61D47406C0076255B /* test.sh in Resources */ = {isa = PBXBuildFile; fileRef = FA6966F51D47406C0076255B /* test.sh */; };
 		FA6A9FDE1CC9D160006A5F0E /* SecController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A9FDD1CC9D160006A5F0E /* SecController.m */; };
 		FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */; };
 		FA9F62AA1C1ABDDB00799E1F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A91C1ABDDB00799E1F /* Security.framework */; };
@@ -95,6 +109,8 @@
 		FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		FA6017941D0017280032739C /* BlockCode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BlockCode.c; sourceTree = "<group>"; };
 		FA6017951D0017280032739C /* BlockCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCode.h; sourceTree = "<group>"; };
+		FA6966F01D46FC1D0076255B /* ShellCode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ShellCode.sh; sourceTree = "<group>"; };
+		FA6966F51D47406C0076255B /* test.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
 		FA6A9FDC1CC9D160006A5F0E /* SecController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecController.h; sourceTree = "<group>"; };
 		FA6A9FDD1CC9D160006A5F0E /* SecController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecController.m; sourceTree = "<group>"; };
 		FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -181,6 +197,8 @@
 				FA6017951D0017280032739C /* BlockCode.h */,
 				39ABCF87191CB1A600E9C19A /* Main.storyboard */,
 				39ABCF8A191CB1A600E9C19A /* RenameViewController.h */,
+				FA6966F01D46FC1D0076255B /* ShellCode.sh */,
+				FA6966F51D47406C0076255B /* test.sh */,
 				39ABCF8B191CB1A600E9C19A /* RenameViewController.m */,
 				39ABCFAA191CB1C800E9C19A /* TTViewController.h */,
 				39ABCFAB191CB1C800E9C19A /* TTViewController.m */,
@@ -254,6 +272,7 @@
 				39ABCF6E191CB1A600E9C19A /* Sources */,
 				39ABCF6F191CB1A600E9C19A /* Frameworks */,
 				39ABCF70191CB1A600E9C19A /* Resources */,
+				FA6966F71D4769120076255B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -288,6 +307,9 @@
 		39ABCF6A191CB1A600E9C19A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					shelldemo,
+				);
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = keyrun;
@@ -302,6 +324,9 @@
 					};
 					39ABCF92191CB1A700E9C19A = {
 						TestTargetID = 39ABCF71191CB1A600E9C19A;
+					};
+					FA6966F11D46FDD70076255B = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
@@ -320,6 +345,7 @@
 			targets = (
 				39ABCF71191CB1A600E9C19A /* TestExtern */,
 				39ABCF92191CB1A700E9C19A /* TestExternTests */,
+				FA6966F11D46FDD70076255B /* Shell */,
 			);
 		};
 /* End PBXProject section */
@@ -329,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6966F61D47406C0076255B /* test.sh in Resources */,
 				39ABCF8E191CB1A600E9C19A /* Images.xcassets in Resources */,
 				3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */,
 				3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */,
@@ -348,6 +375,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA6966F71D4769120076255B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"hello world\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39ABCF6E191CB1A600E9C19A /* Sources */ = {
@@ -579,6 +622,20 @@
 			};
 			name = Release;
 		};
+		FA6966F31D46FDD70076255B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA6966F41D46FDD70076255B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -605,6 +662,15 @@
 			buildConfigurations = (
 				39ABCFA8191CB1A700E9C19A /* Debug */,
 				39ABCFA9191CB1A700E9C19A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA6966F21D46FDD70076255B /* Build configuration list for PBXAggregateTarget "Shell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA6966F31D46FDD70076255B /* Debug */,
+				FA6966F41D46FDD70076255B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

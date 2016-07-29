@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Shell.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>TestExtern.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>39ABCF92191CB1A700E9C19A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA6966F11D46FDD70076255B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
