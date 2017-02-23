@@ -11,4 +11,8 @@
 @interface BGView : UIView
 
 @property (nonatomic ,assign) float angle ;
+
+@property(nonatomic ,strong) UIColor *backColor  ;
+
+
 @end

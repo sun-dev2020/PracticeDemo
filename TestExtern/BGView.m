@@ -20,7 +20,10 @@
     }
     return self;
 }
-
+-(void)setBackColor:(UIColor *)backColor{
+    
+    self.backgroundColor = backColor;
+}
 -(void)setAngle:(float)angle{
     _angle = angle ;
     [self setNeedsDisplay];

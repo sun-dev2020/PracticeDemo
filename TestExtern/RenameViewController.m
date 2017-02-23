@@ -56,19 +56,23 @@ extern NSString* url;
     [super viewDidLoad];
     
     NSLog(@" runloop3 %@",[NSRunLoop currentRunLoop]);
-    
+    [self testForGCDSemaphore];
     [self extracted_method:nil];
 
     struct SSPoint aPoint;
     aPoint.x = 10;
 
-    self.scrollView.hidden = YES;
-    self.scrollView.backgroundColor = [UIColor lightGrayColor];
-    self.scrollView.contentSize = CGSizeMake(320, 800);
-    self.scrollView.delegate = self;
+//    self.scrollView.hidden = YES;
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [scroll setContentSize:CGSizeMake(scroll.frame.size.width, scroll.frame.size.height)];
+    scroll.delegate = self;
+    [self.view addSubview:scroll];
+    
 
+    [[BGView appearance] setBackColor:[UIColor orangeColor]];
     yellow = [[BGView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
     [self.view addSubview:yellow];
+//    yellow.backColor = [UIColor yellowColor];
 
     view = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
     UIImageView* head = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connect_view_bg"]];
@@ -233,14 +237,19 @@ extern NSString* url;
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView
 {
     NSLog(@" offSet %@   inset %@", NSStringFromCGPoint(scrollView.contentOffset), NSStringFromUIEdgeInsets(scrollView.contentInset));
+    
+    NSString *string = @"as" ;
+    @synchronized (string) {
+        string = @"asd";
+        NSLog(@" i am string ");
+    }
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView
 {
     CGPoint offset = scrollView.contentOffset;
     CGRect bounds = scrollView.bounds;
     CGSize size = scrollView.contentSize;
-    UIEdgeInsets insets = scrollView.contentInset;
-    float y = offset.y + bounds.size.height - insets.bottom;
+    float y = offset.y + bounds.size.height ;
     float h = size.height;
     if (y > h - 1) {
         NSLog(@" refresh... ");
@@ -288,6 +297,53 @@ extern NSString* url;
     [downloadTask resume];
 }
 
-
+- (void)testForGCDSemaphore{
+    dispatch_semaphore_t semaphor = dispatch_semaphore_create(0);
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 2500000.0f * NSEC_PER_SEC);
+    dispatch_group_async(group, queue, ^{
+        sleep(2);
+        NSLog(@" task 1");
+        dispatch_semaphore_signal(semaphor);   //信号量加1
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(1);
+        NSLog(@" task 2");
+        dispatch_semaphore_signal(semaphor);
+    });
+    dispatch_group_async(group, queue, ^{
+        sleep(3);
+        NSLog(@" task 3");
+        dispatch_semaphore_signal(semaphor);
+    });
+    dispatch_semaphore_wait(semaphor, DISPATCH_TIME_NOW);
+    NSLog(@" go on ");
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@" wait ");
+        dispatch_semaphore_wait(semaphor, DISPATCH_TIME_NOW);   //如果信号量的值大于0，该函数所处线程就继续执行下面的语句，并且将信号量的值减1，如果desema的值为0，那么这个函数就阻塞当前线程等待timeout
+        dispatch_semaphore_wait(semaphor, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(semaphor, DISPATCH_TIME_FOREVER);
+//        dispatch_semaphore_wait(semaphor, DISPATCH_TIME_FOREVER);
+        NSLog(@" finish 3 ");
+        dispatch_semaphore_wait(semaphor, time);
+        NSLog(@" all done");
+    });
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
