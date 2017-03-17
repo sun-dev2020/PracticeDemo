@@ -20,6 +20,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		04670E031E7B889E00AFB5E5 /* ClangBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 04670E021E7B889E00AFB5E5 /* ClangBlock.m */; };
 		3992979719D2A81400EBFE09 /* connect_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979419D2A81400EBFE09 /* connect_view_bg.png */; };
 		3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979519D2A81400EBFE09 /* connect_view_head.png */; };
 		3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979619D2A81400EBFE09 /* connect_view_progress.png */; };
@@ -45,7 +46,6 @@
 		FA3FDB361C7566E800C72D40 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3FDB351C7566E800C72D40 /* User.m */; };
 		FA573C071C97EDE100ABC788 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA573C061C97EDE100ABC788 /* Default-568h@2x.png */; };
 		FA573C0D1C97EF2900ABC788 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */; };
-		FA6017961D0017280032739C /* BlockCode.c in Sources */ = {isa = PBXBuildFile; fileRef = FA6017941D0017280032739C /* BlockCode.c */; };
 		FA6966F61D47406C0076255B /* test.sh in Resources */ = {isa = PBXBuildFile; fileRef = FA6966F51D47406C0076255B /* test.sh */; };
 		FA6A9FDE1CC9D160006A5F0E /* SecController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A9FDD1CC9D160006A5F0E /* SecController.m */; };
 		FA9F62A81C1ABDD600799E1F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9F62A71C1ABDD600799E1F /* CoreTelephony.framework */; };
@@ -68,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04670E021E7B889E00AFB5E5 /* ClangBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClangBlock.m; sourceTree = "<group>"; };
 		392749A61A591DA90094F728 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3992979419D2A81400EBFE09 /* connect_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_bg.png; sourceTree = "<group>"; };
 		3992979519D2A81400EBFE09 /* connect_view_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_head.png; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		FA573C061C97EDE100ABC788 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FA573C0B1C97EF2900ABC788 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
-		FA6017941D0017280032739C /* BlockCode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BlockCode.c; sourceTree = "<group>"; };
 		FA6017951D0017280032739C /* BlockCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockCode.h; sourceTree = "<group>"; };
 		FA6966F01D46FC1D0076255B /* ShellCode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ShellCode.sh; sourceTree = "<group>"; };
 		FA6966F51D47406C0076255B /* test.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = test.sh; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 			children = (
 				39ABCF84191CB1A600E9C19A /* AppDelegate.h */,
 				39ABCF85191CB1A600E9C19A /* AppDelegate.m */,
-				FA6017941D0017280032739C /* BlockCode.c */,
 				FA6017951D0017280032739C /* BlockCode.h */,
+				04670E021E7B889E00AFB5E5 /* ClangBlock.m */,
 				39ABCF87191CB1A600E9C19A /* Main.storyboard */,
 				39ABCF8A191CB1A600E9C19A /* RenameViewController.h */,
 				39ABCF8B191CB1A600E9C19A /* RenameViewController.m */,
@@ -403,7 +403,7 @@
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
-				FA6017961D0017280032739C /* BlockCode.c in Sources */,
+				04670E031E7B889E00AFB5E5 /* ClangBlock.m in Sources */,
 				FA3FDB361C7566E800C72D40 /* User.m in Sources */,
 				FA6A9FDE1CC9D160006A5F0E /* SecController.m in Sources */,
 				FAE44B3E1C21031C007B84BC /* CoderModel.m in Sources */,
