@@ -21,6 +21,7 @@
 
 /* Begin PBXBuildFile section */
 		04670E031E7B889E00AFB5E5 /* ClangBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 04670E021E7B889E00AFB5E5 /* ClangBlock.m */; };
+		04C9DCA41EBAC6980041EA4C /* NSObject+Observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DCA31EBAC6980041EA4C /* NSObject+Observe.m */; };
 		3992979719D2A81400EBFE09 /* connect_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979419D2A81400EBFE09 /* connect_view_bg.png */; };
 		3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979519D2A81400EBFE09 /* connect_view_head.png */; };
 		3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979619D2A81400EBFE09 /* connect_view_progress.png */; };
@@ -69,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		04670E021E7B889E00AFB5E5 /* ClangBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClangBlock.m; sourceTree = "<group>"; };
+		04C9DCA21EBAC6970041EA4C /* NSObject+Observe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observe.h"; sourceTree = "<group>"; };
+		04C9DCA31EBAC6980041EA4C /* NSObject+Observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Observe.m"; sourceTree = "<group>"; };
 		392749A61A591DA90094F728 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3992979419D2A81400EBFE09 /* connect_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_bg.png; sourceTree = "<group>"; };
 		3992979519D2A81400EBFE09 /* connect_view_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_head.png; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				FA3FDB351C7566E800C72D40 /* User.m */,
 				FA1A87051C7AE6ED00219069 /* MessageForwarding.h */,
 				FA1A87061C7AE6ED00219069 /* MessageForwarding.m */,
+				04C9DCA21EBAC6970041EA4C /* NSObject+Observe.h */,
+				04C9DCA31EBAC6980041EA4C /* NSObject+Observe.m */,
 				39ABCF8D191CB1A600E9C19A /* Images.xcassets */,
 				39ABCF7C191CB1A600E9C19A /* Supporting Files */,
 				FA3FDB311C7566C800C72D40 /* TestExtern-Bridging-Header.h */,
@@ -403,6 +408,7 @@
 				39ABCFAF191CB53500E9C19A /* TTConst.m in Sources */,
 				FAC48E921C040487001D286C /* UIButton+ClickArea.m in Sources */,
 				39ABCF86191CB1A600E9C19A /* AppDelegate.m in Sources */,
+				04C9DCA41EBAC6980041EA4C /* NSObject+Observe.m in Sources */,
 				04670E031E7B889E00AFB5E5 /* ClangBlock.m in Sources */,
 				FA3FDB361C7566E800C72D40 /* User.m in Sources */,
 				FA6A9FDE1CC9D160006A5F0E /* SecController.m in Sources */,

@@ -15,11 +15,22 @@
 #import "UIButton+ClickArea.h"
 #import "SecController.h"
 #import <objc/runtime.h>
+#import "NSObject+Observe.h"
 
 const NSString* externConstString = @"first";
 
 extern NSString* url;
 
+
+@interface Message : NSObject
+
+@property (nonatomic, copy) NSString *text;
+
+@end
+
+@implementation Message
+
+@end
 
 
 
@@ -28,6 +39,7 @@ extern NSString* url;
     UIView* view;
     __block float angleValue;
     __block BGView* yellow;
+    Message *msg;
 }
 @end
 
@@ -117,9 +129,11 @@ extern NSString* url;
     
     [model removeObserver:self forKeyPath:@"information"];
 }
+
 - (void)awakeFromNib
 {
 }
+
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -217,6 +231,17 @@ extern NSString* url;
 
     //student dealloc前一定要执行remove
     [student removeObserver:self forKeyPath:@"name"];
+    
+    
+    msg = [[Message alloc] init];
+    [msg sh_addObserver:self forKey:@"text" block:^(id observer, NSString *key, id newValue, id oldValue) {
+        NSLog(@" new  %@  oldx : %@",newValue, oldValue);
+    }];
+    [self performSelector:@selector(changeText) withObject:nil afterDelay:2.f];
+}
+
+- (void)changeText{
+    msg.text = @"hello";
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
