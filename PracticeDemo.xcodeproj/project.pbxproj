@@ -22,6 +22,8 @@
 /* Begin PBXBuildFile section */
 		04670E031E7B889E00AFB5E5 /* ClangBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 04670E021E7B889E00AFB5E5 /* ClangBlock.m */; };
 		04C9DCA41EBAC6980041EA4C /* NSObject+Observe.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DCA31EBAC6980041EA4C /* NSObject+Observe.m */; };
+		04C9DCA61EBC1CF30041EA4C /* hothead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C9DCA51EBC1CF30041EA4C /* hothead@2x.png */; };
+		04C9DCA91EBC60460041EA4C /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DCA81EBC60460041EA4C /* UIView+RoundedCorner.m */; };
 		3992979719D2A81400EBFE09 /* connect_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979419D2A81400EBFE09 /* connect_view_bg.png */; };
 		3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979519D2A81400EBFE09 /* connect_view_head.png */; };
 		3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 3992979619D2A81400EBFE09 /* connect_view_progress.png */; };
@@ -72,6 +74,9 @@
 		04670E021E7B889E00AFB5E5 /* ClangBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClangBlock.m; sourceTree = "<group>"; };
 		04C9DCA21EBAC6970041EA4C /* NSObject+Observe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Observe.h"; sourceTree = "<group>"; };
 		04C9DCA31EBAC6980041EA4C /* NSObject+Observe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Observe.m"; sourceTree = "<group>"; };
+		04C9DCA51EBC1CF30041EA4C /* hothead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hothead@2x.png"; sourceTree = "<group>"; };
+		04C9DCA71EBC60460041EA4C /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
+		04C9DCA81EBC60460041EA4C /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
 		392749A61A591DA90094F728 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		3992979419D2A81400EBFE09 /* connect_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_bg.png; sourceTree = "<group>"; };
 		3992979519D2A81400EBFE09 /* connect_view_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_view_head.png; sourceTree = "<group>"; };
@@ -221,6 +226,8 @@
 				FAC48E911C040487001D286C /* UIButton+ClickArea.m */,
 				FA573C0B1C97EF2900ABC788 /* UIImage+RoundedCorner.h */,
 				FA573C0C1C97EF2900ABC788 /* UIImage+RoundedCorner.m */,
+				04C9DCA71EBC60460041EA4C /* UIView+RoundedCorner.h */,
+				04C9DCA81EBC60460041EA4C /* UIView+RoundedCorner.m */,
 				FA3FDB341C7566E800C72D40 /* User.h */,
 				FA3FDB351C7566E800C72D40 /* User.m */,
 				FA1A87051C7AE6ED00219069 /* MessageForwarding.h */,
@@ -237,6 +244,7 @@
 		39ABCF7C191CB1A600E9C19A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04C9DCA51EBC1CF30041EA4C /* hothead@2x.png */,
 				3992979419D2A81400EBFE09 /* connect_view_bg.png */,
 				3992979519D2A81400EBFE09 /* connect_view_head.png */,
 				3992979619D2A81400EBFE09 /* connect_view_progress.png */,
@@ -362,6 +370,7 @@
 			files = (
 				FA6966F61D47406C0076255B /* test.sh in Resources */,
 				39ABCF8E191CB1A600E9C19A /* Images.xcassets in Resources */,
+				04C9DCA61EBC1CF30041EA4C /* hothead@2x.png in Resources */,
 				3992979819D2A81400EBFE09 /* connect_view_head.png in Resources */,
 				3992979919D2A81400EBFE09 /* connect_view_progress.png in Resources */,
 				39ABCF80191CB1A600E9C19A /* InfoPlist.strings in Resources */,
@@ -417,6 +426,7 @@
 				39A5C54F1A5A6A73001A6013 /* Student.m in Sources */,
 				39ABCF82191CB1A600E9C19A /* main.m in Sources */,
 				FA1A87071C7AE6ED00219069 /* MessageForwarding.m in Sources */,
+				04C9DCA91EBC60460041EA4C /* UIView+RoundedCorner.m in Sources */,
 				3992979C19D2B56700EBFE09 /* BGView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

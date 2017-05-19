@@ -16,6 +16,8 @@
 #import "SecController.h"
 #import <objc/runtime.h>
 #import "NSObject+Observe.h"
+#import "UIImage+RoundedCorner.h"
+#import "UIView+RoundedCorner.h"
 
 const NSString* externConstString = @"first";
 
@@ -83,12 +85,16 @@ extern NSString* url;
 
     [[BGView appearance] setBackColor:[UIColor orangeColor]];
     yellow = [[BGView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
+//    [yellow addCorner:5.f borderWidth:1.f backgroundColor:[UIColor clearColor] borderColor:[UIColor orangeColor]];
+    [yellow addCorner];
     [self.view addSubview:yellow];
 //    yellow.backColor = [UIColor yellowColor];
 
     view = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 232, 232)];
-    UIImageView* head = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connect_view_bg"]];
-    head.frame = CGRectMake(50, 50, 232, 232);
+    UIImage *imgae = [UIImage imageNamed:@"hothead@2x"];
+    imgae = [imgae sh_imageWithRoundedCornersAndSize:imgae.size andRoundedRadius:5.f];
+    UIImageView* head = [[UIImageView alloc] initWithImage: imgae];
+    head.frame = CGRectMake(50, 150, imgae.size.width, imgae.size.height);
     [self.view addSubview:head];
 
     UIImageView* head2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connect_view_head"]];
@@ -130,9 +136,6 @@ extern NSString* url;
     [model removeObserver:self forKeyPath:@"information"];
 }
 
-- (void)awakeFromNib
-{
-}
 
 - (id)initWithCoder:(NSCoder*)aDecoder
 {

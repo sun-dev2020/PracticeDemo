@@ -95,13 +95,14 @@ static void kvoSetterImp(id self , SEL _cmd , id newValue){
     NSString *className = NSStringFromClass(oriClass);
     
     if (![className hasPrefix:@"SHKvoclass_"]) {
-        oriClass = [self makeKvoClassWithOriginalClassName:className];   //注册kvo派生类
+        oriClass = [self newKVOClassWithOriClassName:className];   //注册kvo派生类
+//        oriClass = [self makeKvoClassWithOriginalClassName:className];
         object_setClass(self, oriClass);    //将对象的isa指向新的类
     }
     
     if (![self hasSelector:setterSel]) {     //检查派生类 是否有实现该方法（一般是没有的，派生类还在内存中）
         const char *types = method_getTypeEncoding(setterMethod);
-        class_addMethod(oriClass, setterSel, (IMP)kvoSetterImp, types);   //添加对改方法的实现
+        class_addMethod(oriClass, setterSel, (IMP)kvoSetterImp, types);   //添加对方法的实现
     }
     
     //保存监听对象
@@ -123,37 +124,16 @@ static void kvoSetterImp(id self , SEL _cmd , id newValue){
     }
     
     Class oriClass = object_getClass(self);
-    Class kvoClass = objc_allocateClassPair(oriClass, kvoClassName.UTF8String , 0);
-    
     Method classMethod = class_getInstanceMethod(oriClass, @selector(class));
+    
+    Class kvoClass = objc_allocateClassPair(oriClass, kvoClassName.UTF8String , 0);  //创建新类，Class objc_allocateClassPair ( Class superclass, const char *name, size_t extraBytes );
+    
     const char *types = method_getTypeEncoding(classMethod);
     class_addMethod(kvoClass, @selector(class), (IMP)kvo_class, types);
     objc_registerClassPair(kvoClass);
     
     return kvoClass;
 
-}
-- (Class)makeKvoClassWithOriginalClassName:(NSString *)originalClazzName
-{
-    NSString *kvoClazzName = [@"SHKvoclass_" stringByAppendingString:originalClazzName];
-    Class clazz = NSClassFromString(kvoClazzName);
-    
-    if (clazz) {
-        return clazz;
-    }
-    
-    // class doesn't exist yet, make it
-    Class originalClazz = object_getClass(self);
-    Class kvoClazz = objc_allocateClassPair(originalClazz, kvoClazzName.UTF8String, 0);
-    
-    // grab class method's signature so we can borrow it
-    Method clazzMethod = class_getInstanceMethod(originalClazz, @selector(class));
-    const char *types = method_getTypeEncoding(clazzMethod);
-    class_addMethod(kvoClazz, @selector(class), (IMP)kvo_class, types);
-    
-    objc_registerClassPair(kvoClazz);
-    
-    return kvoClazz;
 }
 
 
